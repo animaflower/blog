@@ -40,6 +40,7 @@ $router->group([
     Route::post('admin/tools/download_archive', 'ToolsController@handleDownload');
     Route::post('admin/tools/enable_maintenance_mode', 'ToolsController@enableMaintenanceMode');
     Route::post('admin/tools/disable_maintenance_mode', 'ToolsController@disableMaintenanceMode');
+    Route::get('admin/visit','VisitController@index');
 });
 
 /*
