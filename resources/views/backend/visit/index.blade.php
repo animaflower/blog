@@ -41,14 +41,20 @@
                         <table id="data-table-tags" class="table table-condensed table-vmiddle">
                             <thead>
                                 <tr>
+                                    <th data-column-id="location" data-sortable="false">location</th>
                                     <th data-column-id="ip" data-sortable="false">IP</th>
-                                    <th data-column-id="time" data-order="desc">Time</th>
+                                    <th data-column-id="time">Time</th>
                                     <th data-column-id="count">Count</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($visit_record as $record)
                                     <tr>
+                                        @if($record->location)
+                                            <td>{{ $record->location }}</td>
+                                        @else
+                                            <td><center>暂无数据</center></td>
+                                        @endif
                                         <td>{{ $record->ip }}</td>
                                         <td>{{ $record->created_at }}</td>
                                         <td class="hidden-md">{{  $record->count }}</td>
